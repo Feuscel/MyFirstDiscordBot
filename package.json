@@ -1,0 +1,11 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  },
+  "devDependencies": {
+    "discord-reply": "^0.1.2",
+    "dotenv": "^9.0.0"
+  }
+}
