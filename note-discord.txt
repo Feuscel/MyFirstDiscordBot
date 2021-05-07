@@ -1,0 +1,31 @@
+ajouter prefix dans un test de message "${prefix}message"
+savoir si le message commence par ce que l'ont veut tester message.content.startsWith("contenu")
+A noter que startsWith fonctionne avec "!pingpong" pour le message "!ping"
+const args = message.content.slice(prefix.length).trim().split(/ +/); permet de splitter le message par un ou plusieur espaces
+shift() : prend le premier element dans une liste array
+slice(3) : retire d'un string les 3 premiers caractères
+trim() : retire les espaces du début et la fin du string
+const taggedUser = message.mentions.users.first(); recuperer l'objet user du premier mentionné dans le message
+message.mentions.users.size savoir le nombre d'utilisateur mentionné dans le message
+.map(function); appliquer une fonction a tout les element du tableau
+.slice(1).join(" "); permet de retourner un string a partir d'un tableau, avec l'index 1 et rejoindre le reste du tableau séparé par des espaces
+
+utilisation de usage
+module.exports = {
+	name: 'role',
+	args: true,
+	usage: '<user> <role>',
+	execute(message, args) {
+		// ...
+	},
+};
+
+if (command.args && !args.length) {
+	let reply = `You didn't provide any arguments, ${message.author}!`;
+
+	if (command.usage) {
+		reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+	}
+
+	return message.channel.send(reply);
+}
