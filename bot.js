@@ -12,7 +12,7 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
-client.login(token).then(r => console.log('readyyyyy'));
+client.login(token).then(r => console.log('I\'m connected'));
 
 client.on('message', message =>{
     if(isPrefix(message)) executeCommand(message);
@@ -26,7 +26,7 @@ function executeCommand(message){
             command.execute(message, args);
         } catch (error) {
             console.error(error);
-            message.reply('there was an error trying to execute that command!');
+            message.reply('There was an error trying to execute that command!');
         }
     }
 
@@ -51,7 +51,7 @@ function getArgs(message){
 
 function getCommand(args, message){
     const commandName = args.shift().toLowerCase();
-    if (!isCommand(commandName)) return message.lineReplyNoMention("Ceci n'est pas une command.");
+    if (!isCommand(commandName)) return message.lineReplyNoMention("Ceci n'est pas une commande.");
     const command = client.commands.get(commandName);
     if (haveArg(command, args)) return message.lineReplyNoMention("Il faut donné des arguments.");
     return command;
