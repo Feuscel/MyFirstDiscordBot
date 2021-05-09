@@ -9,7 +9,9 @@ module.exports = {
                 message.channel.send(this.description);
                 break;
             case 'prefix':
-                const config = require('')
+                const config = require('../../configFile.js');
+                config.prefix = args[1];
+                console.log(config.prefix);
         }
     }
 };

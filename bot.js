@@ -1,5 +1,6 @@
-const { prefix, token } = require('./config/config.json');
-const configuration = require('./config/configFIle.js')
+const { token } = require('./config.json');
+const configuration = require('./configFile.js');
+
 const Discord = require('discord.js');
 require('discord-reply');
 const client = new Discord.Client();
@@ -11,7 +12,7 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
-client.login(token);
+client.login(token).then(r => console.log('readyyyyy'));
 
 client.on('message', message =>{
     if(isPrefix(message)) executeCommand(message);
@@ -33,7 +34,7 @@ function executeCommand(message){
 }
 
 function isPrefix(message){
-    return !(!message.content.startsWith(prefix) || message.author.bot);
+    return !(!message.content.startsWith(configuration.prefix) || message.author.bot);
 }
 
 function isCommand(commandName){
@@ -45,7 +46,7 @@ function haveArg(command, args){
 }
 
 function getArgs(message){
-    return message.content.slice(prefix.length).trim().split(/ +/);
+    return message.content.slice(configuration.prefix.length).trim().split(/ +/);
 }
 
 function getCommand(args, message){
