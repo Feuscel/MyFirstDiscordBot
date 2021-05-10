@@ -5,6 +5,7 @@ module.exports = {
     guildOnly: true,
     isJoined: false,
     async execute(message, args) {
+        let connection;
         const { voice } = message.member;
         switch (args[0]){
             case 'join':
@@ -14,7 +15,6 @@ module.exports = {
                 break;
             case 'play':
                 const dispatcher = voice.channel.play('/home/feuscel/Documents/lab/bot/MyFirstDiscordBot/commands/Fun/audio.mp3');
-
         }
 
     },
