@@ -7,3 +7,5 @@ config.json
 .eslintrc.json
 
 .idea/
+
+git_connected.sh
