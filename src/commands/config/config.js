@@ -4,7 +4,7 @@ module.exports = {
 	args: true,
 	guildOnly: false,
 	execute(message, args) {
-		switch (args[0]){
+		switch (args[0]) {
 		case 'help':
 			message.channel.send(this.description);
 			break;
