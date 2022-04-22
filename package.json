@@ -13,7 +13,8 @@
   },
   "devDependencies": {
     "discord-reply": "^0.1.2",
-    "dotenv": "^9.0.0"
+    "dotenv": "^9.0.0",
+    "eslint": "^8.13.0"
   },
   "main": "bot.js",
   "scripts": {
