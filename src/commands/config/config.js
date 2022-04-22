@@ -17,6 +17,7 @@ module.exports = {
 			require('../../configFile.js').prefix = args[1];
 			message.channel.send('@everyone le nouveau prefix est "' + require('../../configFile.js').prefix + '"');
 			break;
+		// oui oui stack code
 		default :
 			throw new Error('database failed to connect');
 		}
