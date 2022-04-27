@@ -2,7 +2,7 @@ const { token } = require('./config.json');
 const configuration = require('./configFile.js');
 
 const Discord = require('discord.js');
-require('discord-reply');
+// require('discord-reply');
 const client = new Discord.Client();
 configuration.dotenv.config();
 
@@ -12,7 +12,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.login(token).then(r => console.log('I\'m connected'));
+client.login(token).then(() => console.log('I\'m connected'));
 
 client.on('message', message => { if (isPrefix(message)) executeCommand(message); });
 
